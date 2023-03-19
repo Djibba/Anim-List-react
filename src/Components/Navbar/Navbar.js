@@ -6,8 +6,8 @@ function Navbar () {
     return (
         <nav >
             <Link to='/'>LISTE</Link>
+            <Link to='/stateanim'>STATE</Link>
             <Link to='/scroll'>SCROLL</Link>
-            <Link to='/stateamin'>STATEAMIN</Link>
         </nav>
     )
 }
