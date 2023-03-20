@@ -33,32 +33,31 @@ function StateAnim () {
         inputRef.current.value = ""
     }
 
-    const listTransitions = useTransition(inputData, {
-        from: {opacity: 0, transform: "translateY(10px)"},
-        enter: {opacity: 0, transform: "translateY(0px)"},
-        keys: inputData.map((item) => item.id)
-    })
-    console.log(listTransitions)
+    // const listTransitions = useTransition(inputData, {
+    //     from: {opacity: 0, transform: "translateY(10px)"},
+    //     enter: {opacity: 0, transform: "translateY(0px)"},
+    //     keys: inputData.map((item) => item.id)
+    // }
     return (
         <form onSubmit={handleData} >
             <label htmlFor="piano">Renseignez vos pianistes favoris.</label>
             <input type="text" ref={inputRef} id='piano'/>
 
-            <ul>
-                {listTransitions((styles, item) => {
-                    return (
-                        <animated.li style={styles}>
-                            {item.txt}
-                        </animated.li>
-                    )
-                })}
-            </ul>
-
             {/*<ul>*/}
-            {/*    {inputData.map((item) => (*/}
-            {/*        <li key={item.id}>{item.txt}</li>*/}
-            {/*    ))}*/}
+            {/*    {listTransitions((styles, item) => {*/}
+            {/*        return (*/}
+            {/*            <animated.li style={styles}>*/}
+            {/*                {item.txt}*/}
+            {/*            </animated.li>*/}
+            {/*        )*/}
+            {/*    })}*/}
             {/*</ul>*/}
+
+            <ul>
+                {inputData.map((item) => (
+                    <li key={item.id}>{item.txt}</li>
+                ))}
+            </ul>
         </form>
     )
 }
